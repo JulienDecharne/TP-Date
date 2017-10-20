@@ -19,9 +19,9 @@ public class Launcher
 		int monthsLengths[] = {31,29,31,30,31,30,31,31,30,31,30,31};
 
 		// Index du mois;
-		int idMonth = 0;
+		int idMonth;
 		// Nombre total de jours pour un mois donné
-		int totalDays = 0;
+		int totalDays;
 
 		
 		// Recueillera l'entrée de l'utilisateur
@@ -40,17 +40,14 @@ public class Launcher
 		
 		
 		// Parcours du tableau monthsLengths
-		for(int monthLength: monthsLengths)
+		for(idMonth = 0, totalDays = 0; idMonth < monthsLengths.length; idMonth++)
 		{
 			// TotalDay est mis à jour dès maintenant
 			// Est égal au dernier jour du mois courant
-			totalDays = totalDays + monthLength;
+			totalDays = totalDays + monthsLengths[idMonth];
 			// Si l'entrée est avant la fin du mois courant
 			// => On arrête
 			if (input <= totalDays) { break; }
-			// On incrémente l'index du mois
-			// Est égal au mois SUIVANT
-			idMonth = idMonth + 1;
 		}
 		
 		// Sortie pour l'utilisateur
