@@ -16,16 +16,20 @@ public class Launcher
 		
 
 		// Tableau des durées des mois
-		int monthsLengths[] = {31,29,31,30,31,30,31,31,30,31,30,31};
+		int monthsLengths[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
 
 		// Recueillera l'entrée de l'utilisateur
 		int input; // Entre 1 et 365 (Exceptions non gérées)
+		// L'année est-elle bissextile ?
+		boolean isBissextile;
 		// Index du mois;
 		int idMonth;
 		// Nombre total de jours pour un mois donné
 		int totalDays;
 		
+		isBissextile = true;
+		if(isBissextile) { monthsLengths[1] = 29; }
 		
 		// Objet Scanner pour l'entrée
 		Scanner inputScanner = new Scanner(System.in);
