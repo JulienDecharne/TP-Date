@@ -18,26 +18,21 @@ public class Launcher
 		// Tableau des durées des mois
 		int monthsLengths[] = {31,29,31,30,31,30,31,31,30,31,30,31};
 
+
+		// Recueillera l'entrée de l'utilisateur
+		int input; // Entre 1 et 365 (Exceptions non gérées)
 		// Index du mois;
 		int idMonth;
 		// Nombre total de jours pour un mois donné
 		int totalDays;
-
-		
-		// Recueillera l'entrée de l'utilisateur
-		int input; // Entre 1 et 365 (Exceptions non gérées)
-		// Les noms du mois et du jour de la semaine
-		String monthName;
-		String weekDayName;		
 		
 		
-		// Scanner pour l'entrée
+		// Objet Scanner pour l'entrée
 		Scanner inputScanner = new Scanner(System.in);
 		// Entrée de l'utilisateur
 		System.out.print("Entrez le jour de l'année : ");
 		input = inputScanner.nextInt(); // Exceptions non gérées
-		System.out.println();
-		
+
 		
 		// Parcours du tableau monthsLengths
 		for(idMonth = 0, totalDays = 0; idMonth < monthsLengths.length; idMonth++)
