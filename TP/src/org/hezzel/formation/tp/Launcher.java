@@ -34,7 +34,7 @@ public class Launcher
 		input = inputScanner.nextInt(); // Exceptions non gérées
 		inputScanner.close();
 
-		
+
 		// Parcours du tableau monthsLengths
 		for(idMonth = 0, totalDays = 0; idMonth < monthsLengths.length; idMonth++)
 		{
