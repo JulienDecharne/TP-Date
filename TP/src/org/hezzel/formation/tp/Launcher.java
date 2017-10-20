@@ -32,6 +32,7 @@ public class Launcher
 		// Entrée de l'utilisateur
 		System.out.print("Entrez le jour de l'année : ");
 		input = inputScanner.nextInt(); // Exceptions non gérées
+		inputScanner.close();
 
 		
 		// Parcours du tableau monthsLengths
