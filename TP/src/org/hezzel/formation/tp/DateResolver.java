@@ -12,13 +12,14 @@ public class DateResolver
 	};
 	
 	// Tableau des durées des mois
-	final private static int monthsLengths[] = {31,28,31,30,31,30,31,31,30,31,30,31};
-
-	private boolean bissextile;
+	private static int monthsLengths[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 	
-	public DateResolver(boolean bissextile)
+	public DateResolver(boolean isBissextile)
 	{
-		this.bissextile = bissextile;
+		if(isBissextile)
+		{
+			monthsLengths[1]++;
+		}
 	}
 	
 	public String getMonthName(int day)
@@ -30,8 +31,6 @@ public class DateResolver
 			// TotalDay est mis à jour dès maintenant
 			// Est égal au dernier jour du mois courant
 			totalDays = totalDays + monthsLengths[idMonth];
-			
-			if(this.bissextile && (idMonth == 1) ) { totalDays++; }
 			
 			// Si l'entrée est avant la fin du mois courant
 			// => On arrête
