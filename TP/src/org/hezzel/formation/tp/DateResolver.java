@@ -14,16 +14,30 @@ public class DateResolver
 	// Tableau des durées des mois
 	private static int monthsLengths[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 	
+	private int max_days;
+	
 	public DateResolver(boolean isBissextile)
 	{
 		if(isBissextile)
 		{
 			monthsLengths[1]++;
 		}
+		
+		max_days = 0;
+		for(int monthLength: monthsLengths)
+		{
+			max_days += monthLength;
+		}
 	}
 	
 	public String getMonthName(int day)
+		throws Exception
 	{
+
+		if(day < 1 && day > this.max_days)
+		{
+			throw new Exception();
+		}
 		int idMonth,totalDays;
 		// Parcours du tableau monthsLengths
 		for(idMonth = 0, totalDays = 0; idMonth < monthsLengths.length; idMonth++)

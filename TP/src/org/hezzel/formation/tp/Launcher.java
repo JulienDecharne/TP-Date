@@ -18,12 +18,27 @@ public class Launcher
 		Scanner inputScanner = new Scanner(System.in);
 		// Entrée de l'utilisateur
 		System.out.print("Entrez le jour de l'année : ");
-		input = inputScanner.nextInt(); // Exceptions non gérées
-		inputScanner.close();
-
-
-		// Sortie pour l'utilisateur
-		System.out.println("              Mois : " + resolver.getMonthName(input));
-		System.out.println("Jour de la semaine : " + resolver.getWeekdayName(input));
+		try
+		{
+			input = inputScanner.nextInt();
+			// Sortie pour l'utilisateur
+			try
+			{
+				System.out.println("              Mois : " + resolver.getMonthName(input));
+				System.out.println("Jour de la semaine : " + resolver.getWeekdayName(input));
+			}
+			catch (Exception e)
+			{
+				System.out.println("L'entrée est invalide.");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("L'entrée doit être un nombre");
+		}
+		finally
+		{
+			inputScanner.close();
+		}
 	}
 }
