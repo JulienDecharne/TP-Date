@@ -33,8 +33,7 @@ public class DateResolver
 	public String getMonthName(int day)
 		throws Exception
 	{
-
-		if(day < 1 && day > this.max_days)
+		if( (day < 1) || (day > this.max_days) )
 		{
 			throw new Exception();
 		}
